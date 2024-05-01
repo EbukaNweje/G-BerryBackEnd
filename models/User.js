@@ -23,24 +23,10 @@ const UserSchema = new mongoose.Schema({
     required: true,
   },
 
-  gender: {
-    type: String,
-    required: true,
-  },
 
   country: {
     type: String,
     required: true,
-  },
-
-  address: {
-    type: String,
-    required: true,
-
-  },
-
-  howdoyouhearabout: {
-    type: String,
   },
   
   referralCode: {
