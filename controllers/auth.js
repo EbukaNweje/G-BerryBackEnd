@@ -28,7 +28,7 @@ exports.register = async (req, res, next)=>{
          const newUser = new User({
             password:hash,
             email: req.body.email,
-            fullName:req.body.fullName,
+            fullName: req.body.fullName,
             phoneNumber: req.body.phoneNumber,
             country: req.body.country,
          })
@@ -262,8 +262,6 @@ exports.login = async (req, res, next)=>{
 
         const isPasswordCorrect = await bcrypt.compare(req.body.password, Users.password)
         if(!isPasswordCorrect) return next(createError(400, "Wrong password or username"))
-
-        // if(Users.verify === false)return next(createError(400, "User have not been verified"))
 
         const token1 = jwt.sign({id:Users._id, isAdmin:Users.isAdmin}, process.env.JWT, {expiresIn: "1d"})
         Users.token = token1
