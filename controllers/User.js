@@ -4,7 +4,7 @@ const investModel = require("../models/investModel")
 exports.getoneUser = async (req, res, next) =>{
     try {
         const userId = req.params.userId
-        const UserData = await User.findById(userId).populate("deposits")
+        const UserData = await User.findById(userId)
         if(UserData.accountBalance > 0){
             let newDay = UserData.newDay
             const setter = setInterval(() => {
