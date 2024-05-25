@@ -132,7 +132,7 @@ const addInterest = async (userId, planId, amount) => {
         }
          
         let totalDailyInterest;
-        const interest = plan.percentageInterest  // Calculate interest
+        const interest = (plan.percentageInterest * amount) /100  
 
         user.accountBalance += parseFloat(interest); // Add interest to the user's account balance
         await user.save();
