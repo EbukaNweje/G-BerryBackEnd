@@ -1,5 +1,6 @@
 const mongoose = require("mongoose")
 const {DateTime} = require('luxon')
+const { type } = require("@hapi/joi/lib/extend")
 
 const createdOn = DateTime.now().toLocaleString({weekday:"short",month:"short",day:"2-digit", year:"numeric", hour:"2-digit",minute:"2-digit"})
 
@@ -19,7 +20,7 @@ const withdrawSchema = new mongoose.Schema({
     },
     walletAddress:{
         type:String,
-        required:true,
+        // required:true,
     },
     coin:{
         type:String,
@@ -33,6 +34,15 @@ const withdrawSchema = new mongoose.Schema({
     withdrawDate:{
         type:String,
         default:createdOn
+    },
+    bankName: {
+        type: String
+    },
+    accountNumber: {
+        type: String
+    },
+    bankHolderName: {
+        type: String
     }
 })
 

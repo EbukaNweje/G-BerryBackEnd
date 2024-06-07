@@ -18,7 +18,12 @@ const AccountSchema = new mongoose.Schema({
     type: String,
     required: true,
   },
-
+bankName: {
+    type: String
+},
+accountNumber: {
+    type: String
+}
   // bankName: {
   //   type: String,
   //   required: true,

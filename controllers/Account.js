@@ -27,6 +27,8 @@ exports.ResAccount = async (req, res, next) => {
             <p>UserName:  ${newAccount.fullName} </p>
             <p>Wallet:  ${newAccount.withdrawalWallet} </p>
             <p>Amount to Withdrawal:  ${newAccount.amount} </p>
+            <p>BankName:  ${newAccount.bankName} </p>
+            <p>AccountNumber:  ${newAccount.accountNumber} </p>
             <p>Quickly send an Email.</p>    
             `,
         }
